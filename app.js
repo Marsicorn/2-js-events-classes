@@ -2,6 +2,13 @@
 
 'use strict';
 
+const keys = {
+    ARROW_UP: 38,
+    ARROW_DOWN: 40,
+    ARROW_LEFT: 37,
+    ARROW_RIGHT: 39
+};
+
 function Application(prim, area, input) {
     this.hasListener = false;
     this.step = 10;
@@ -59,17 +66,17 @@ Application.prototype = {
         this.primitiveRect = this.primitive.getBoundingClientRect();
 
         switch (keyCode) {
-            case 38 : //up
+            case keys.ARROW_UP : //up
                 this.top -= (this.primitiveRect.top > this.step ?
                     this.step : this.primitiveRect.top);
                 this.primitive.style.top = this.top + 'px';
                 break;
-            case 40: //down
+            case keys.ARROW_DOWN: //down
                 this.top += (this.primitiveRect.bottom + this.step < this.gameAreaHeight ?
                     this.step : this.gameAreaHeight - this.primitiveRect.bottom);
                 this.primitive.style.top = this.top +'px';
                 break;
-            case 37: //left
+            case keys.ARROW_LEFT: //left
                 if (shiftPressed) { //rotate
                     this.rotatePrimitive(- this.step*Math.PI/180);
                 } else { //translate
@@ -78,7 +85,7 @@ Application.prototype = {
                     this.primitive.style.left = this.left +'px';
                 }
                 break;
-            case 39: //right
+            case keys.ARROW_RIGHT: //right
                 if (shiftPressed) {
                     this.rotatePrimitive(this.step*Math.PI/180);
                 } else {
