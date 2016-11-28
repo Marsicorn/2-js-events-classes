@@ -1,0 +1,68 @@
+$img-urls: (
+  green-element: 'suprema_element_green.png',
+  black-square: 'black_square_malevich.png',
+  airplane-flying: 'airplane_flying_malevich.png'
+);
+
+$background-color: #f0efed;
+
+.gameArea {
+  background-image: url(map-get($img-urls, 'airplane-flying'));
+  background-color: $background-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 20px;
+
+  .control {
+    display: block;
+    height: 50px;
+    min-height: 50px;
+    background-color: transparent;
+
+    &__step {
+      width: 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &__start {
+      background-image: url(map-get($img-urls, 'green-element'));
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      border: none;
+      padding: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    &__stop {
+      background-color: $background-color;
+      border: none;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 10px $background-color;
+    }
+  }
+
+  .primitive {
+    position: absolute;
+    background-image: url(map-get($img-urls, 'black-square'));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    visibility: hidden;
+    position: relative;
+    zIndex: 1;
+  }
+}

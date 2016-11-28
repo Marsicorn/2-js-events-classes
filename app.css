@@ -1,0 +1,51 @@
+.gameArea {
+  background-image: url("airplane_flying_malevich.png");
+  background-color: #f0efed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 20px; }
+  .gameArea .control {
+    display: block;
+    height: 50px;
+    min-height: 50px;
+    background-color: transparent; }
+    .gameArea .control__step {
+      width: 100px;
+      position: relative;
+      z-index: 2; }
+    .gameArea .control__start {
+      background-image: url("suprema_element_green.png");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      border: none;
+      padding: auto;
+      position: relative;
+      z-index: 2; }
+    .gameArea .control__stop {
+      background-color: #f0efed;
+      border: none;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 10px #f0efed; }
+  .gameArea .primitive {
+    position: absolute;
+    background-image: url("black_square_malevich.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    visibility: hidden;
+    position: relative;
+    zIndex: 1; }
+
+/*# sourceMappingURL=app.css.map */
